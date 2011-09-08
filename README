@@ -1,0 +1,65 @@
+
+                      Apache HTTPD module mod_define
+
+  What is it?
+  -----------
+
+  The Apache HTTPD module mod_define allows to define variables
+  in the web server configuration files and to use them later
+  in the files. This allows to build configurations which are
+  easier to understand and maintain.
+
+  HTTPD version 2.0 and 2.2 by default allow the use of environment
+  variables in the configuration. Beware that those are not changed
+  when the web server gets restarted.
+
+  All variables defined by mod_define are reread during restarts,
+  because their definition is part of the configuration.
+
+  The Latest Version
+  ------------------
+
+  Details of the latest version can be found on the module
+  project page under <http://people.apache.org/~rjung/mod_define/>.
+
+  Documentation
+  -------------
+
+  The documentation available as of the date of this release is
+  included in HTML format in the module source download.
+
+  Building
+  --------
+
+  The module gets build using the apxs script, which comes as part
+  of Apache HTTPD. Download the source tarball of the module,
+  uncompress and extract it and then call
+
+    apxs -o mod_define.so -c mod_define.c
+
+  inside the resulting directory.
+
+  Installation
+  ------------
+
+  Move the file mod_define.so resulting from the build step above
+  into the modules directory of Apache HTTPD or any other directory you
+  like. Add the following line to your HTTPD configuration:
+
+    LoadModule define_module modules/mod_define.so
+
+  If you choose another directory for the module, you need to adjust
+  the last token accordingly.
+
+  For the directives provided by the module see the provided HTML documentation.
+
+  Licensing
+  ---------
+
+  Please see the file called LICENSE.
+
+  Acknowledgments
+  ----------------
+
+  This software was originally developped as an Apache httpd
+  version 1.3 module by Ralf S. Engelschall and Christian Reiber.
