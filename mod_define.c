@@ -469,6 +469,7 @@ static void DefineInit(apr_pool_t *p)
     apr_table_set(tDefines, "mod_define::dollar", DEFAULT_MC_DOLLAR);
     apr_table_set(tDefines, "mod_define::open",   DEFAULT_MC_BRACEOPEN);
     apr_table_set(tDefines, "mod_define::close",  DEFAULT_MC_BRACECLOSE);
+    apr_table_set(tDefines, "mod_define::empty",  "");
     apr_pool_cleanup_register(p, NULL, DefineCleanup, apr_pool_cleanup_null);
     return;
 }
